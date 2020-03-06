@@ -3,14 +3,13 @@ package com.sisucon.loopdaliy_server.Utils;
 import com.sisucon.loopdaliy_server.Model.ReplyMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.ClassUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
 
 public class Util {
-    private static String uploadDir = ClassUtils.getDefaultClassLoader().getResource("").getPath()+"/upload";
+    private static String uploadDir = "/var/www/html/upload";
 
     public static ReplyMessage saveFile(MultipartFile file, String path ,String lastFileName,String name){
         if (file.getOriginalFilename()==null){

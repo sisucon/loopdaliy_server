@@ -39,7 +39,7 @@ public class ActionClass {
     public boolean isAccept() {
         return isAccept;
     }
-
+  
     public void setAccept(boolean accept) {
         isAccept = accept;
     }

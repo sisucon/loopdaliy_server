@@ -1,7 +1,5 @@
 package com.sisucon.loopdaliy_server.Controller
 
-import com.mongodb.BasicDBObject
-import com.mongodb.DBObject
 import com.sisucon.loopdaliy_server.Model.ReplyMessage
 import com.sisucon.loopdaliy_server.Model.UserModel
 import com.sisucon.loopdaliy_server.Model.UserModelRepository
@@ -17,18 +15,10 @@ import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.http.ResponseEntity
 import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.security.core.authority.SimpleGrantedAuthority
-import org.springframework.util.ClassUtils
 import org.springframework.web.multipart.MultipartFile
-import com.mongodb.gridfs.GridFSDBFile
 import org.springframework.web.bind.annotation.*
 
-import javax.imageio.ImageIO
-import javax.management.relation.Role
-import java.awt.image.BufferedImage
-import java.io.*
 import java.util.ArrayList
-import java.util.Collections
-import java.util.Date
 
 @RestController
 @RequestMapping("user")
@@ -96,6 +86,7 @@ class UserController {
         userModelRepository!!.save(userModel)
         return Util.getRE(ReplyMessage(true, "同步成功"), HttpStatus.OK)
     }
+
 
 
 }

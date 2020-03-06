@@ -1,7 +1,5 @@
 package com.sisucon.loopdaliy_server.Controller;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
 import com.sisucon.loopdaliy_server.Model.*;
 import com.sisucon.loopdaliy_server.Utils.Util;
 import org.springframework.beans.factory.annotation.Autowired;

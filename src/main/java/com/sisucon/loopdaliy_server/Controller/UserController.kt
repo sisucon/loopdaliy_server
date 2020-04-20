@@ -77,6 +77,7 @@ class UserController {
 
     @RequestMapping( "/myInfo")
     private fun getMyInfo(@AuthenticationPrincipal userModel: UserModel): UserModel {
+        userModel.passWord = "********"
         return userModel
     }
 

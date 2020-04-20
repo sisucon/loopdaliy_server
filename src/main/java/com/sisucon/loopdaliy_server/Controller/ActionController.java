@@ -29,6 +29,9 @@ public class ActionController {
     @RequestMapping(value = "/createAction")
     private ResponseEntity createAction(@RequestParam(value = "name") String name, @RequestParam(value = "file")MultipartFile file,@RequestParam(value = "loopTime")long loopTime,@RequestParam(value = "type")int type) {
         ReplyMessage replyMessage = null;
+        if (actionClassRepository.findActionClassesByName(name)!=null){
+            return Util.getRE(new ReplyMessage(false,"已存在同名的活动"),HttpStatus.OK);
+        }
         if ((replyMessage =  Util.saveFile(file,"/actionDefault/"+(actionClassRepository.count()+1)+"/",null,name+"_default")).isResult()){
             ActionClass actionClass = new ActionClass();
             actionClass.setId(actionClassRepository.count()+1);

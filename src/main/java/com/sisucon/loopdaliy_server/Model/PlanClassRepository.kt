@@ -8,4 +8,5 @@ import java.util.ArrayList
 interface PlanClassRepository : MongoRepository<PlanClass,Long>{
     fun findPlanClassById(id:Long) : PlanClass
     fun findPlanClassesByUserId(id:Long) : List<PlanClass>
+    fun findPlanClassByUserIdAndId(userId:Long,planId:Long):PlanClass
 }

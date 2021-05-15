@@ -61,9 +61,17 @@ class PlanController(private val planService: PlanService) {
     }
 
     @RequestMapping("/updatePlan")
-    fun updatePlan(@AuthenticationPrincipal userModel: UserModel, @RequestBody planClass:PlanJson){
+    fun updatePlan(@AuthenticationPrincipal userModel: UserModel, @RequestBody planClass:PlanJson):PlanClass{
         var planDb = planService.findByUserIdAndPlanId(userModel,planClass.remoteId)
+        planDb.isFinish = planClass.isFinish
+        planDb.isLoop = planClass.isLoop
+        planDb.isRemind = planClass.isRemind
+        planDb.loopTime = planClass.loopTime
+        planDb.name = planClass.name
+        planDb.startTime =planClass.startTime
         logger.info(userModel.userName+" 删除了计划"+planClass.name)
+        planService.saveItem(planDb)
+        return planDb
     }
 
 }

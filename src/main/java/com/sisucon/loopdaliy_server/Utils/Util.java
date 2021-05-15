@@ -9,8 +9,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class Util {
-//    private static String uploadDir = "/var/www/html/upload";
-private static String uploadDir = "F:/upload";
+    private static String uploadDir = "/var/www/html/upload";
+//private static String uploadDir = "F:/upload";
 
     public static ReplyMessage saveFile(MultipartFile file, String path ,String lastFileName,String name){
         if (file.getOriginalFilename()==null){

@@ -1,5 +1,6 @@
 package com.sisucon.loopdaliy_server.Controller
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.sisucon.loopdaliy_server.Model.ReplyMessage
 import com.sisucon.loopdaliy_server.Model.UserModel
 import com.sisucon.loopdaliy_server.Model.UserModelRepository
@@ -76,9 +77,9 @@ class UserController {
     }
 
     @RequestMapping( "/myInfo")
+    @JsonIgnoreProperties("passWord")
     private fun getMyInfo(@AuthenticationPrincipal userModel: UserModel): UserModel {
-        userModel.passWord = "********"
-        return userModel
+            return userModel
     }
 
     @RequestMapping( "/syanMyAttenAction")

@@ -7,12 +7,10 @@ public class PlanEventClass {
     private long id;
     //用户id
     private long userId;
-    //安排id
+    //日程id
     private long planId;
     private boolean isFinish;
     private long updateTime;
-
-
     private int index; //第几次完成
     public long getId() {
         return id;
